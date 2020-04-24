@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Restaurant_1 = require("./Restaurant");
+var Menu_1 = require("./Menu");
 var Franchise = /** @class */ (function () {
     function Franchise(address, menuList) {
         this.address = address;
@@ -28,14 +28,14 @@ var Franchise = /** @class */ (function () {
             return (nameofItem);
         }
         else {
-            return ['Menu is not Available at this Time :('];
+            return ['No Menu Available at this Time :('];
         }
     };
     return Franchise;
 }());
 exports.Franchise = Franchise;
-exports.menuList = [Restaurant_1.brunch_menu, Restaurant_1.early_bird_menu, Restaurant_1.dinner_menu, Restaurant_1.kids_menu];
-exports.newMenuList = [Restaurant_1.arepa_menu];
+exports.menuList = [Menu_1.brunch_menu, Menu_1.early_bird_menu, Menu_1.dinner_menu, Menu_1.kids_menu];
+exports.newMenuList = [Menu_1.arepa_menu];
 exports.flagship_store = new Franchise('123 West Street Road', exports.menuList);
 console.log('Flagship_store ' + exports.flagship_store.store_address());
 console.log('Available Menu: ' + exports.flagship_store.available_menus(17));
