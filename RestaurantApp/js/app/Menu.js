@@ -14,7 +14,6 @@ var Menu = /** @class */ (function () {
     };
     //get complete menu details
     Menu.prototype.complete_menu = function (menu_list) {
-        console.log(menu_list);
         var menu_details = {};
         var menu_name = Object.keys(menu_list);
         for (var _i = 0, menu_name_1 = menu_name; _i < menu_name_1.length; _i++) {
@@ -64,7 +63,7 @@ var Menu = /** @class */ (function () {
     return Menu;
 }());
 exports.Menu = Menu;
-var menu_list = { brunch: menu_mock_1.brunch, early_bird: menu_mock_1.early_bird, kids: menu_mock_1.kids, dinner: menu_mock_1.dinner };
+var menu_list = { brunch: menu_mock_1.brunch, early_bird: menu_mock_1.early_bird, kids: menu_mock_1.kids, dinner: menu_mock_1.dinner, arepa: menu_mock_1.arepa };
 exports.brunch_menu = new Menu("brunch", menu_mock_1.brunch, '11', '16');
 exports.brunch_menu.timing();
 var brunch_bill = exports.brunch_menu.calculate_bill(['pancakes', 'waffles', 'burger', 'abc']);
@@ -73,7 +72,7 @@ var completeBrunchMenu = exports.brunch_menu.complete_menu(menu_list);
 console.log('Complete Menu detail');
 console.log(completeBrunchMenu);
 var brunch_another_bill = exports.brunch_menu.calculate_bill(['pancakes', 'waffles', 'burger', 'abc'], completeBrunchMenu); //passing Optional argument
-console.log(brunch_another_bill);
+console.log('Your new Bill :-' + brunch_another_bill);
 exports.early_bird_menu = new Menu("early_bird", menu_mock_1.early_bird, '15', '18');
 exports.early_bird_menu.timing();
 var early_bird_bill = exports.early_bird_menu.calculate_bill(['salumeria plate', 'salad and breadsticks (serves 2, norefills)',
@@ -83,7 +82,7 @@ var completeEarlyBirdsMenu = exports.early_bird_menu.complete_menu(menu_list);
 console.log('Complete Menu detail');
 console.log(completeEarlyBirdsMenu);
 var earlyBird_another_bill = exports.early_bird_menu.calculate_bill(['salad and breadsticks (serves 2, norefills)'], completeEarlyBirdsMenu); //passing Optional argument
-console.log(earlyBird_another_bill);
+console.log('Your new Bill : ' + earlyBird_another_bill);
 exports.dinner_menu = new Menu("dinner", menu_mock_1.dinner, '17', '23');
 exports.dinner_menu.timing();
 var dinner_bill = exports.dinner_menu.calculate_bill(['crostini with eggplant caponata', 'ceaser salad', 'pizza with quattro formaggi']);
@@ -92,7 +91,7 @@ var completeDinnerMenu = exports.dinner_menu.complete_menu(menu_list);
 console.log('Complete Menu detail');
 console.log(completeDinnerMenu);
 var dinner_another_bill = exports.dinner_menu.calculate_bill(['ceaser salad', 'pizza with quattro formaggi'], completeDinnerMenu); //passing Optional argument
-console.log(dinner_another_bill);
+console.log('Your new Bill : ' + dinner_another_bill);
 exports.kids_menu = new Menu("kids", menu_mock_1.kids, '11', '21');
 exports.kids_menu.timing();
 var kids_bill = exports.kids_menu.calculate_bill(['chicken nuggets', 'fusilli with wild mushrooms']);
@@ -100,14 +99,14 @@ console.log('Your Total Bill :' + kids_bill);
 var completeKidsMenu = exports.kids_menu.complete_menu(menu_list);
 console.log('Complete Menu detail');
 console.log(completeKidsMenu);
-var kids_another_bill = exports.kids_menu.calculate_bill(['pizza with quattro formaggi'], completeKidsMenu); //passing Optional argument
-console.log(kids_another_bill);
-exports.arepa_menu = new Menu("arepa", menu_mock_1.arepa, '11', '20');
+var kids_another_bill = exports.kids_menu.calculate_bill(['chicken nuggets'], completeKidsMenu); //passing Optional argument
+console.log('Your new Bill : ' + kids_another_bill);
+exports.arepa_menu = new Menu("arepa", menu_mock_1.arepa, '10', '20');
 exports.arepa_menu.timing();
 var arepa_bill = exports.arepa_menu.calculate_bill(['arepa pabellon', 'pernil arepa', 'guayanes arepa']);
 console.log('Your Total Bill :' + arepa_bill);
 var completeArepaMenu = exports.arepa_menu.complete_menu(menu_list);
 console.log('Complete Menu detail');
 console.log(completeArepaMenu);
-var arepa_another_bill = exports.arepa_menu.calculate_bill(['pizza with quattro formaggi'], completeArepaMenu); //passing Optional argument
-console.log(arepa_another_bill);
+var arepa_another_bill = exports.arepa_menu.calculate_bill(['pernil arepa'], completeArepaMenu); //passing Optional argument
+console.log('Your new Bill : ' + arepa_another_bill);
